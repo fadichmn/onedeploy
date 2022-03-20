@@ -13,11 +13,11 @@ ONE_SSH_KEY_PRIVATE_PATH="$SSH_PATH/github_action"
 ONE_SSH_KEY_PUBLIC_PATH="$SSH_PATH/github_action.pub"
 
 #Deploy Vars
-ONE_SSH_HOST="ssh.artend.se"
+ONE_SSH_HOST="ssh.$ONE_DOMAIN_NAME"
 if [ -n "$TPO_PATH" ]; then
     DIR_PATH="$TPO_PATH"
 else
-    DIR_PATH="gagn/"
+    DIR_PATH=""
 fi
 
 if [ -n "$TPO_SRC_PATH" ]; then
@@ -26,9 +26,9 @@ else
     SRC_PATH="."
 fi
 
-ONE_SSH_USER="artend.se@ssh.artend.se"
+ONE_SSH_USER="$ONE_DOMAIN_NAME"@ssh."$ONE_DOMAIN_NAME"
 
-ONE_DESTINATION="artend.se@ssh.artend.se:/customers/6/6/d/artend.se/httpd.www/gagn"
+ONE_DESTINATION="$ONE_SSH_USER":/../../www/"$DIR_PATH"
 
 echo "SRC: $SRC_PATH"
 echo "DEST: $ONE_DESTINATION"
