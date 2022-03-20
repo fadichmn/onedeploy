@@ -28,7 +28,7 @@ fi
 
 ONE_SSH_USER="$ONE_DOMAIN_NAME"@ssh."$ONE_DOMAIN_NAME"
 
-ONE_DESTINATION="artend.se@ssh.artend.se:/www/gagn/"$DIR_PATH"
+ONE_DESTINATION="$ONE_SSH_USER":/../../www/gagn/"$DIR_PATH"
 
 echo "SRC: $SRC_PATH"
 echo "DEST: $ONE_DESTINATION"
